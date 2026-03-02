@@ -2,24 +2,32 @@ const input = document.getElementById("input");
 const buttonAdd = document.getElementById("btnAdicionar");
 const item = document.getElementById("item");
 
-function addItem(){
-    const text = input.value.trim();
-    if (text === "") return;
+function addItem() {
+    if (input.value.trim() === "") {
+        return;
+    }
 
     const li = document.createElement("li");
-    li.textContent = text;
-    
+    li.textContent = input.value.trim();
+
+    const btnCompletar = document.createElement("button");
+    btnCompletar.textContent = "Completar";
+    li.appendChild(btnCompletar);
+
     const btnRemover = document.createElement("button");
-    btnRemover.textContent = "X";
-    
-    btnRemover.addEventListener("click", function(){
-        li.remove();
-    })
-
+    btnRemover.textContent = "Remover";
     li.appendChild(btnRemover);
-    item.appendChild(li);
 
+    btnCompletar.addEventListener("click", function () {
+        li.classList.toggle("completo");
+    });
+
+    btnRemover.addEventListener("click", function () {
+        li.remove();
+    });
+
+    item.appendChild(li);
     input.value = "";
 }
 
-buttonAdd.addEventListener("click", addItem)
+buttonAdd.addEventListener("click", addItem);
