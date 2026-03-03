@@ -1,5 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column; 
+  min-height: 100vh;
+  padding-top: 3%;
+
+  background-image: linear-gradient(100deg, #ebe7bc, #4E0110);
+  color: #32174D;
+}
+
+
+
+#header{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 3rem;
+    min-height: 25vh;
+    width: 100%;
+}
+
+
+/* isso era para ser a animação*/
+#title {
+    border-right: solid 3px rgba(0, 0, 0, 0.75);
+    white-space: pre;
+    overflow: hidden;
+    letter-spacing: 0.20rem;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    max-width: 480px;
+    animation:
+        animated-text 2s steps(11,end) 0.5s 1 normal both,
+        animated-cursor 750ms steps(11,end) infinite;
+}
+
 .completo {
-    text-decoration: line-through;
-    opacity: 0.5;
-    transition: 0,2s;
+  text-decoration: line-through;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;  
+}
+
+#toDoList{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
 }
