@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 body {
   display: flex;
   align-items: center;
@@ -48,8 +47,6 @@ body {
   cursor: pointer;
   transition: 0.2s ease;
 }
-
-
 
 #header{
     align-items: center;
