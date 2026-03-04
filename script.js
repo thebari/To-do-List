@@ -7,28 +7,32 @@ function addItem() {
   event.preventDefault();
   if (input.value.trim() === "") {
     return;
-  }else{
-  const li = document.createElement("li");
-  li.textContent = input.value.trim();
+  } else {
+    const li = document.createElement("li");
+    
+    const span = document.createElement("span");
+    span.textContent = input.value.trim();
+    li.appendChild(span);
 
-  const btnCompletar = document.createElement("button");
-  btnCompletar.innerHTML = '<i class="fas fa-check"></i>';
-  li.appendChild(btnCompletar);
+    const btnCompletar = document.createElement("button");
+    btnCompletar.innerHTML = '<i class="fas fa-check"></i>';
+    li.appendChild(btnCompletar);
 
-  const btnRemover = document.createElement("button");
-  btnRemover.innerHTML = '<i class="fas fa-trash"></i>';
-  li.appendChild(btnRemover);
+    const btnRemover = document.createElement("button");
+    btnRemover.innerHTML = '<i class="fas fa-trash"></i>';
+    li.appendChild(btnRemover);
 
-  btnCompletar.addEventListener("click", function () {
-    li.classList.toggle("completo");
-  });
 
-  btnRemover.addEventListener("click", function () {
-    li.remove();
-  });
+    btnCompletar.addEventListener("click", function () {
+      span.classList.toggle("completo");
+    });
 
-  list.appendChild(li);
-  input.value = "";
+    btnRemover.addEventListener("click", function () {
+      li.remove();
+    });
+
+    list.appendChild(li);
+    input.value = "";
   }
 }
 
