@@ -1,12 +1,13 @@
 const input = document.getElementById("input");
 const buttonAdd = document.getElementById("btnAdicionar");
 const list = document.getElementById("list");
+const form = document.getElementById("form-group");
 
 function addItem() {
+  event.preventDefault();
   if (input.value.trim() === "") {
     return;
   }else{
-
   const li = document.createElement("li");
   li.textContent = input.value.trim();
 
@@ -32,4 +33,7 @@ function addItem() {
 }
 
 buttonAdd.addEventListener("click", addItem);
-
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  addItem();
+});
